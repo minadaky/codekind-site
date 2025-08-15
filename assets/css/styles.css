@@ -1,0 +1,82 @@
+/* CodeKind minimal, sleek theme */
+:root{
+  --bg: #0b0c10;
+  --card: #12141a;
+  --text: #e6e6e6;
+  --muted: #a8b0bd;
+  --brand: #5bd0ff;
+  --accent: #8aff80;
+  --border: #232634;
+  --shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6}
+img{max-width:100%;height:auto;border-radius:12px}
+.container{width:min(1100px,92vw);margin-inline:auto}
+/* Global links */
+a{color:var(--brand);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}
+a:hover{color:#9be8ff}
+a:visited{color:var(--brand)}
+a:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:20;background:rgba(11,12,16,.8);backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--text);text-decoration:none;font-weight:700}
+.brand-logo{width:32px;height:32px;object-fit:contain;border-radius:6px;background:#fff}
+.brand-text{letter-spacing:.2px}
+.main-nav{display:flex;gap:1rem}
+.main-nav a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:8px;transition:.2s color, .2s background}
+.main-nav a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.main-nav a.active{color:var(--bg);background:linear-gradient(135deg,var(--brand),var(--accent));font-weight:700}
+.nav-toggle{display:none;background:transparent;border:1px solid var(--border);color:var(--text);padding:.25rem .5rem;border-radius:8px}
+@media (max-width:720px){
+  .main-nav{position:absolute;right:4vw;top:56px;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.5rem;display:none;box-shadow:var(--shadow)}
+  .main-nav.open{display:flex}
+  .nav-toggle{display:inline-block}
+}
+
+/* Hero */
+.hero{padding:8vh 0 6vh;background:radial-gradient(1000px 400px at 10% -10%, rgba(91,208,255,.15), transparent),radial-gradient(800px 300px at 90% -20%, rgba(138,255,128,.12), transparent)}
+.hero-inner{padding:4rem 0;text-align:center}
+.hero h1{font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 .5rem}
+.lead{color:var(--muted);font-size:1.05rem;margin:0 auto 1.25rem;max-width:65ch}
+.actions{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap}
+
+/* Buttons */
+.btn{display:inline-block;padding:.7rem 1rem;border-radius:10px;border:1px solid var(--border);color:var(--text);text-decoration:none;transition:.2s background,.2s transform}
+.btn:hover{background:rgba(255,255,255,.06);transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(135deg,var(--brand),var(--accent));color:#0a0a0a;border-color:transparent;font-weight:700}
+.btn.primary:hover{filter:saturate(1.1)}
+
+/* Cards */
+.cards{display:grid;gap:1rem;margin:2rem 0}
+.cards.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.cards.three{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cards.three{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.1rem;box-shadow:var(--shadow)}
+.card h3{margin-top:.2rem}
+
+/* Board */
+.card.person{display:flex;flex-direction:column}
+.card.person img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:.6rem}
+.card.person .role{color:var(--muted);margin-top:-.2rem}
+.card.person .links{margin-top:auto}
+.card.person .links a{color:var(--brand)}
+.card.person .links a:hover{color:#9be8ff}
+
+/* Sections */
+.values{padding:1rem 0 3rem}
+.page-header{padding:2.25rem 0 1rem}
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0 2rem}
+@media (max-width:900px){.contact{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.contact{grid-template-columns:1fr}}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1rem}
+.cta{text-align:center;padding:2rem 0 3rem}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--border);margin-top:2rem}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;color:var(--muted)}
+
+/* Utilities */
+.hidden{display:none!important}

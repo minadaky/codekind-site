@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CodeKind — Open‑source for the common good</title>
+  <meta name="description" content="CodeKind is a 501(c)(3) non‑profit building free or low‑cost open‑source projects that benefit the community." />
+  <meta property="og:title" content="CodeKind — Open‑source for the common good" />
+  <meta property="og:description" content="We build free or low‑cost open‑source projects that benefit the community." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+    <div class="brand">
+  <img class="brand-logo" src="assets/img/logo.png" alt="CodeKind logo" />
+        <span class="brand-text">CodeKind</span>
+    </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="main-nav" aria-label="Main">
+  <a href="index.html" class="active">Home</a>
+  <a href="board.html">Board</a>
+  <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Open‑source for the common good</h1>
+        <p class="lead">CodeKind is a 501(c)(3) non‑profit creating free or low‑cost open‑source projects that serve communities and amplify positive impact.</p>
+        <div class="actions">
+          <a class="btn primary" href="board.html">Meet the Board</a>
+          <a class="btn" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="values container">
+      <div class="cards three">
+        <article class="card">
+          <h3>Community First</h3>
+          <p>We listen, co‑create, and prioritize real needs over hype.</p>
+        </article>
+        <article class="card">
+          <h3>Open by Default</h3>
+          <p>Our work is transparent, reusable, and built to empower others.</p>
+        </article>
+        <article class="card">
+          <h3>Impact, Not Overhead</h3>
+          <p>Lean operations so resources flow to projects and people.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> CodeKind. All rights reserved.</p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Fallback if logo is missing
+    (function() {
+      const img = document.querySelector('.brand-logo');
+      if (img) {
+        img.addEventListener('error', () => {
+          img.style.display = 'none';
+        });
+      }
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
